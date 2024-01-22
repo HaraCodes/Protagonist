@@ -15,14 +15,14 @@ Map<String, List<Map<int, String>>> exercise = {
   ],
   'Blue Lock' : [
     {
-      5: 'pushup',
-      7: 'pullup',
-      16: 'jumping-jacks',
+      15: 'mountain-climber',
     },
     {
-      2: 'squats',
-      10: 'lunges',
-      18: 'mountain-climber'
+      39: 'archer-squats',
+    },
+    {
+      10: 'jumping-jacks',
+      17: 'running-in-place',
     }
   ]
 };

@@ -18,10 +18,10 @@ Map<String, List<Map<int, String>>> exercise = {
       15: 'mountain-climber',
     },
     {
-      39: 'archer-squats',
+      39: 'leg-extensions',
     },
     {
-      10: 'jumping-jacks',
+      10: 'archer-squats',
       17: 'running-in-place',
     }
   ]

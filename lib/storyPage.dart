@@ -8,6 +8,7 @@ import 'package:protagonist/exercise.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 import 'package:flutter/material.dart';
 import 'StoryCollection.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 class storyPage extends StatefulWidget {
   storyPage({required this.title, required this.chapter});
@@ -81,9 +82,20 @@ class _storyPageState extends State<storyPage> {
                   onVisibilityChanged: (VisibilityInfo info) { if(seen!.containsKey(index) && seen![index]==0 && turn==index){showOverlay(index); setState(() {
                     seen![index]=1;
                   });} },
-                  child: Image.network(story[widget.title]![widget.chapter][index+1]));
+                  //child: Image.network(story[widget.title]![widget.chapter][index+1]));
+                  child: CachedNetworkImage(
+                    imageUrl: story[widget.title]![widget.chapter][index+1],
+                    placeholder: (context, url) => Image.asset('assets/Placeholder/placeholder.jpg'),
+                    errorWidget: (context, url, error) => Icon(Icons.error),
+                  ));
             }
-        return Image.network(story[widget.title]![widget.chapter][index+1]);
+        //return Image.network(story[widget.title]![widget.chapter][index+1]);
+            //replacing network image with cached network image
+            return CachedNetworkImage(
+              imageUrl: story[widget.title]![widget.chapter][index+1],
+              placeholder: (context, url) => Image.asset('assets/Placeholder/placeholder.jpg'),
+              errorWidget: (context, url, error) => Icon(Icons.error),
+            );
       }),
     );
   }
